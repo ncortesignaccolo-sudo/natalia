@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Felices 50 Años! - La Búsqueda del Tesoro</title>
+    <!-- Fuentes elegantes de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Librería para generar códigos QR dinámicamente -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="badge-50">50</div>
+        <h1>Medio Siglo de Historia</h1>
+        <p class="subtitle">Hoy es un día muy especial. A lo largo del día se irán desbloqueando 6 pistas y sorpresas cada 3 horas. ¡Mantente atento al reloj!</p>
+        
+        <!-- Botón opcional para probar cómo se ve todo desbloqueado antes del día del evento -->
+        <button id="btn-modo-prueba" class="btn-test" title="Haz clic para simular que ya pasaron todas las horas">
+            👁️ Modo Prueba (Desbloquear todo)
+        </button>
+    </header>
+
+    <main class="timeline-container" id="qr-container">
+        <!-- Las tarjetas de los 6 QR se generarán automáticamente desde script.js -->
+    </main>
+
+    <footer>
+        <p>Hecho con todo nuestro cariño por tus 50 años ✨</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
