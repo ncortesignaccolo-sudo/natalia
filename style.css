@@ -5,7 +5,6 @@
     --gold-light: #f3e5ab;
     --text-main: #f4f4f6;
     --text-muted: #9ca3af;
-    --locked-bg: #13151a;
 }
 
 * {
@@ -22,10 +21,9 @@ body {
     padding-bottom: 50px;
 }
 
-/* Cabecera */
 .hero {
     text-align: center;
-    padding: 50px 20px 30px;
+    padding: 45px 20px 25px;
     background: radial-gradient(circle at top, #232732 0%, var(--bg-color) 70%);
     border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
@@ -34,43 +32,41 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 80px;
-    height: 80px;
+    width: 76px;
+    height: 76px;
     border-radius: 50%;
     border: 2px solid var(--gold-primary);
     font-family: 'Cinzel', serif;
-    font-size: 2.2rem;
+    font-size: 2.1rem;
     font-weight: 700;
     color: var(--gold-primary);
-    margin-bottom: 15px;
+    margin-bottom: 14px;
     box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
 }
 
 h1 {
     font-family: 'Cinzel', serif;
-    font-size: 2rem;
+    font-size: 1.9rem;
     color: var(--gold-light);
-    margin-bottom: 10px;
-    letter-spacing: 1px;
+    margin-bottom: 8px;
 }
 
 .subtitle {
-    max-width: 550px;
+    max-width: 520px;
     margin: 0 auto;
     color: var(--text-muted);
     font-size: 0.95rem;
 }
 
 .btn-test {
-    margin-top: 20px;
+    margin-top: 18px;
     background: transparent;
-    border: 1px dashed rgba(212, 175, 55, 0.4);
+    border: 1px dashed rgba(212, 175, 55, 0.45);
     color: var(--text-muted);
-    padding: 6px 14px;
+    padding: 7px 14px;
     border-radius: 20px;
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
 .btn-test:hover {
@@ -78,52 +74,30 @@ h1 {
     color: var(--gold-primary);
 }
 
-/* Contenedor vertical de los 6 QR */
 .timeline-container {
-    max-width: 500px;
-    margin: 40px auto;
-    padding: 0 20px;
+    max-width: 480px;
+    margin: 35px auto;
+    padding: 0 18px;
     display: flex;
     flex-direction: column;
-    gap: 35px;
-    position: relative;
+    gap: 28px;
 }
 
-/* Línea vertical conectora entre los QR */
-.timeline-container::before {
-    content: '';
-    position: absolute;
-    top: 20px;
-    bottom: 20px;
-    left: 50%;
-    width: 2px;
-    background: linear-gradient(to bottom, transparent, var(--gold-primary), transparent);
-    transform: translateX(-50%);
-    z-index: 0;
-    opacity: 0.3;
-}
-
-/* Tarjeta de cada QR */
 .qr-card {
     background-color: var(--card-bg);
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid rgba(212, 175, 55, 0.35);
     border-radius: 16px;
-    padding: 25px;
+    padding: 24px;
     text-align: center;
-    position: relative;
-    z-index: 1;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
 }
 
 .qr-card.unlocked {
     border-color: var(--gold-primary);
-    box-shadow: 0 10px 35px rgba(212, 175, 55, 0.15);
 }
 
-/* Tarjeta especial para el #6 (Gran Final) */
 .qr-card.final-card.unlocked {
-    background: linear-gradient(145deg, #1f232c, #2a2416);
+    background: linear-gradient(145deg, #1f232c, #2b2415);
     border: 2px solid var(--gold-primary);
 }
 
@@ -131,36 +105,33 @@ h1 {
     display: inline-block;
     background: rgba(212, 175, 55, 0.15);
     color: var(--gold-primary);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 600;
     padding: 4px 12px;
     border-radius: 12px;
     margin-bottom: 10px;
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .qr-card h2 {
     font-family: 'Cinzel', serif;
-    font-size: 1.35rem;
-    color: var(--text-main);
+    font-size: 1.3rem;
     margin-bottom: 8px;
 }
 
 .qr-desc {
     font-size: 0.9rem;
     color: var(--text-muted);
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
-/* Contenedor del código QR */
 .qr-wrapper {
     position: relative;
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 15px;
+    width: 190px;
+    height: 190px;
+    margin: 0 auto 14px;
     background: #ffffff;
-    padding: 12px;
+    padding: 10px;
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -168,85 +139,72 @@ h1 {
     overflow: hidden;
 }
 
-.qr-wrapper img, .qr-wrapper canvas {
+.qr-wrapper img,
+.qr-wrapper canvas {
     width: 100% !important;
     height: 100% !important;
+    display: block;
 }
 
-/* Estado Bloqueado */
 .qr-card.locked .qr-code-box {
-    filter: blur(14px);
+    filter: blur(12px);
     opacity: 0.25;
-    pointer-events: none;
-    user-select: none;
 }
 
 .lock-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(15, 17, 21, 0.85);
+    background: rgba(15, 17, 21, 0.88);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: var(--gold-light);
-    padding: 15px;
+    padding: 12px;
 }
 
 .lock-icon {
-    font-size: 2rem;
-    margin-bottom: 8px;
+    font-size: 1.8rem;
+    margin-bottom: 6px;
 }
 
 .countdown-timer {
     font-family: monospace;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: var(--gold-primary);
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.45);
     padding: 4px 10px;
     border-radius: 6px;
-    margin-top: 5px;
+    margin-top: 6px;
 }
 
-/* Mensaje especial que aparece en el QR final al desbloquearse */
 .final-message-box {
-    margin-top: 20px;
-    padding: 18px;
-    background: rgba(212, 175, 55, 0.1);
+    margin-top: 16px;
+    padding: 16px;
+    background: rgba(212, 175, 55, 0.12);
     border-left: 3px solid var(--gold-primary);
     border-radius: 8px;
     text-align: left;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     color: var(--gold-light);
-    animation: fadeIn 1s ease;
 }
 
 .btn-link {
     display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
+    margin-top: 12px;
+    padding: 10px 18px;
     background-color: var(--gold-primary);
     color: #0f1115;
     text-decoration: none;
     font-weight: 600;
     border-radius: 8px;
-    font-size: 0.9rem;
-    transition: background 0.3s;
-}
-
-.btn-link:hover {
-    background-color: var(--gold-light);
+    font-size: 0.88rem;
 }
 
 footer {
     text-align: center;
     color: var(--text-muted);
     font-size: 0.85rem;
-    margin-top: 40px;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    margin-top: 35px;
 }
